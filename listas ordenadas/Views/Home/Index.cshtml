@@ -2,7 +2,57 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div id="app">
+    <div class="jumbotron">
+        <h4>Lista de nombres</h4>
+        <ul>
+            <li v-for="nombre in nombres">{{ nombre }}</li>
+        </ul>
+    </div>
+
+    <div class="jumbotron">
+        <h4>Lista de nombres ordenados ascendentemente</h4>
+        <ul>
+            <li v-for="nombre in OrdenarBurbuja(nombres)">{{ nombre }}</li>
+        </ul>
+    </div>
+
+    <div class="jumbotron">
+        <h4>Lista de nombres ordenados descentendemente</h4>
+        <ul>
+            <li v-for="nombre in OrdenarBurbuja(nombres, true)">{{ nombre }}</li>
+        </ul>
+    </div>
+
+    <div class="jumbotron">
+        <h4>Lista de nombres vocales ascendentes</h4>
+        <ul>
+            <li v-for="nombre in vocales(nombres)">{{ nombre }}</li>
+        </ul>
+    </div>
+
+    <div class="jumbotron">
+        <h4>Lista de nombres vocales descendentes</h4>
+        <ul>
+            <li v-for="nombre in vocales(nombres)">{{ nombre }}</li>
+        </ul>
+    </div>
+
+
+
+    <div class="jumbotron">
+        <h4>Lista de nombres consonantes ascendentes</h4>
+        <ul>
+            <li v-for="nombre in consonantes(nombres)">{{ nombre }}</li>
+        </ul>
+    </div>
+
+    <div class="jumbotron">
+        <h4>Lista de nombres consonantes descendentes</h4>
+        <ul>
+            <li v-for="nombre in consonantes(nombres)">{{ nombre }}</li>
+        </ul>
+    </div>
+
+
 </div>
