@@ -62,7 +62,7 @@
             return consonantes;
         },
 
-        OrdenarListas: function (lista) {            //lista = lista.sort(function (a, b) {            //    if (a > b) {            //        return 1;            //    }            //    if (a < b) {            //        return -1;            //    }            //    return 0;            //});            lista = this.OrdenarBurbuja(lista);            return lista;        },
+        OrdenarListas: function (lista) {            lista = this.OrdenarBurbuja(lista);            return lista;        },
 
         //Devuelve la coleccion ordenada
         OrdenarBurbuja: function (array, descendente) {
@@ -107,7 +107,22 @@
             } while (huboCambios)
 
             return array;
+        },
+
+        Invertir: function invertir(nombre) {
+            var x = nombre.length;
+            var listaInvertida = "";
+
+            while (x >= 0) {
+                listaInvertida = listaInvertida + nombre.charAt(x);
+                x--;
+            }
+            return listaInvertida;
         }
+
+        
+
+
 
 
     }

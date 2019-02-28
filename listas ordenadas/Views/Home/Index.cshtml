@@ -3,54 +3,69 @@
 }
 
 <div id="app">
+    
     <div class="jumbotron">
-        <h4>Lista de nombres</h4>
+        <h4>Lista con los nombres</h4>
         <ul>
             <li v-for="nombre in nombres">{{ nombre }}</li>
         </ul>
     </div>
 
     <div class="jumbotron">
-        <h4>Lista de nombres ordenados ascendentemente</h4>
+        <h4>Lista con los nombres ordenados ascendentemente</h4>
         <ul>
             <li v-for="nombre in OrdenarBurbuja(nombres)">{{ nombre }}</li>
         </ul>
     </div>
 
     <div class="jumbotron">
-        <h4>Lista de nombres ordenados descentendemente</h4>
+        <h4>Lista con los nombres ordenados descentendemente</h4>
         <ul>
             <li v-for="nombre in OrdenarBurbuja(nombres, true)">{{ nombre }}</li>
         </ul>
     </div>
 
     <div class="jumbotron">
-        <h4>Lista de nombres vocales ascendentes</h4>
+        <h4>Lista de nombres con vocales ordenados ascendentemente</h4>
+        <ul>
+            <li v-for="nombre in OrdenarBurbuja(vocales(nombres))">{{ nombre }}</li>
+        </ul>
+    </div>
+
+    <div class="jumbotron">
+        <h4>Lista de nombres con vocales ordenados descendentemente</h4>
         <ul>
             <li v-for="nombre in vocales(nombres)">{{ nombre }}</li>
         </ul>
     </div>
 
+
+
     <div class="jumbotron">
-        <h4>Lista de nombres vocales descendentes</h4>
+        <h4>Lista de nombres con consonantes ordenados ascendentemente</h4>
         <ul>
-            <li v-for="nombre in vocales(nombres)">{{ nombre }}</li>
+            <li v-for="nombre in OrdenarBurbuja(consonantes(nombres))">{{ nombre }}</li>
         </ul>
     </div>
 
-
-
     <div class="jumbotron">
-        <h4>Lista de nombres consonantes ascendentes</h4>
+        <h4>Lista de nombres con consonantes ordenados descendentemente</h4>
         <ul>
             <li v-for="nombre in consonantes(nombres)">{{ nombre }}</li>
         </ul>
     </div>
 
     <div class="jumbotron">
-        <h4>Lista de nombres consonantes descendentes</h4>
+        <h4>Lista de nombres con vocales invertidos</h4>
         <ul>
-            <li v-for="nombre in consonantes(nombres)">{{ nombre }}</li>
+            <li v-for="nombre in OrdenarBurbuja(vocales(nombres))">{{ Invertir(nombre) }}</li>
+        </ul>
+    </div>
+
+    <div class="jumbotron">
+        <h4>Lista de nombres con consonantes invertidos</h4>
+        <ul>
+            <li v-for="nombre in OrdenarBurbuja(consonantes(nombres))">{{ Invertir(nombre) }}</li>
         </ul>
     </div>
 
